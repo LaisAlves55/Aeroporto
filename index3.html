@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Radar Global</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #2c3e50; color: white; padding: 30px; text-align: center; }
+        .painel { background-color: #34495e; padding: 30px; border-radius: 10px; margin-top: 20px; font-size: 20px; }
+        button { padding: 15px 30px; font-size: 18px; cursor: pointer; background: #e67e22; color: white; border: none; border-radius: 5px; margin-bottom: 20px; }
+        .temp { font-size: 40px; color: #f1c40f; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>📡 Conexão com o Satélite (Open-Meteo)</h1>
+    <button id="btnClima">Buscar Clima Atual</button>
+    
+    <div id="telaClima" class="painel">Aguardando conexão...</div>
+
+    <script src="satelite.js"></script>
+</body>
+</html>
