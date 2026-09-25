@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aeroporto Inteligente - Radar Global AV1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #0b132b;
+            color: #e0e1dd;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: #1c2541;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(78, 205, 196, 0.2);
+            border: 1px solid #3a506b;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #3a506b;
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            color: #4efdc7;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        p.subtitulo {
+            color: #8d99ae;
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(78, 253, 199, 0.1);
+            color: #4efdc7;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 12px;
+            border: 1px solid rgba(78, 253, 199, 0.3);
+        }
+
+        .radar-pulse {
+            width: 10px;
+            height: 10px;
+            background-color: #4efdc7;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #4efdc7;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.7; }
+        }
+
+        #telaPainel {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .card-voo {
+            background: #0b132b;
+            padding: 16px 20px;
+            border-radius: 10px;
+            border-left: 5px solid #4efdc7;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card-voo:hover {
+            transform: translateX(4px);
+            border-left-color: #ffd166;
+        }
+
+        .card-voo h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f8f9fa;
+        }
+
+        footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📡 Radar Global ATC</h1>
+            <p class="subtitulo">Aeroporto Inteligente — Sistema de Telemetria AV1</p>
+            <div class="badge-status">
+                <div class="radar-pulse"></div>
+                Satélite Conectado com Segurança
+            </div>
+        </header>
+
+        <!-- Elemento obrigatório do enunciado -->
+        <div id="telaPainel">
+            <p style="color: #8d99ae; text-align: center;">Carregando telemetria dos voos...</p>
+        </div>
+
+        <footer>
+            Polimorfismo & Segurança em Produção — Pronto para Vercel / Netlify
+        </footer>
+    </div>
+
+    <!-- Script carregado como type="module" conforme exigido pelo enunciado -->
+    <script type="module" src="./radarGlobal.js"></script>
+</body>
+</html>
