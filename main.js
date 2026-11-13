@@ -16,9 +16,11 @@ R: A modularização (ES6 Modules) permite dividir o código em arquivos separad
 
 import Voo from "./Voo.js";
 
-import { salvarVooNoDisco } from "./StorageService.js";
+import { salvarVooNoDisco, buscarFrota } from "./StorageService.js";
 
 import { renderizarTela } from "./PainelView.js";
+
+import AgenteIoTService from './AgenteIoTService.js';
 
 document.getElementById("btnCadastrar").addEventListener("click", () => {
     let codigo = document.getElementById("inputCod").value;
@@ -30,5 +32,14 @@ document.getElementById("btnCadastrar").addEventListener("click", () => {
 
     renderizarTela();
 });
+
+let frota = buscarFrota();
+
+const agenteIoT = new AgenteIoTService(
+    frota,
+    renderizarTela
+);
+
+agenteIoT.iniciarMonitoramentoCorreto();
 
 renderizarTela();
